@@ -98,3 +98,23 @@ if __name__ == "__main__":
     model = load_gpt_model(output_dir)  # Load the GPT-2 model
     train_gpt_model(model, dataloader)
     save_trained_model(model, tokenizer, output_dir)
+    
+"""
+
+load_and_preprocess_data(file_path): This function loads and preprocesses data from a file. It takes the file path as an argument and returns the preprocessed data.
+
+tokenize_data(data, max_length=512): This function tokenizes the data using the GPT2Tokenizer from the transformers library. It truncates the data to fit a maximum length (default is 512), pads the data to the maximum length, and returns a PyTorch tensor of the tokenized data.
+
+GPTDataset(Dataset): This is a custom dataset class that takes in the tokenized data as an argument and returns a dictionary containing input_ids, attention_mask, and token_type_ids.
+
+initialize_gpt_model(): This function initializes a new GPT-2 model using the GPT2LMHeadModel from the transformers library.
+
+load_gpt_model(model_dir): This function loads a pre-trained GPT-2 model from a specified directory using the GPT2LMHeadModel from the transformers library.
+
+train_gpt_model(model, dataloader, epochs=2, learning_rate=5e-5): This function trains the GPT-2 model on the given dataset using the specified number of epochs and learning rate. It takes in the model, dataloader, number of epochs (default is 2), and learning rate (default is 5e-5) as arguments.
+
+save_trained_model(model, tokenizer, output_dir): This function saves the trained GPT-2 model and tokenizer to a specified output directory using the save_pretrained() method.
+
+The main part of the script loads and preprocesses the data, tokenizes the data, creates a dataset and dataloader, loads a pre-trained GPT-2 model, trains the model on the dataset, and saves the trained model and tokenizer to a specified output directory.
+
+"""

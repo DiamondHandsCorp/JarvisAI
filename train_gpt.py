@@ -1,5 +1,5 @@
 # Authored bySean Pepper
-# Private license or commercial license.By using this code you agree to
+# Private license
 import torch
 from torch.utils.data import Dataset, DataLoader
 from transformers import GPT2Tokenizer, GPT2LMHeadModel, GPT2Config, AdamW, get_linear_schedule_with_warmup
